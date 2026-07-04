@@ -1,0 +1,186 @@
+/* Form Controls Stylesheet */
+
+.lims-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xs);
+  width: 100%;
+}
+
+.lims-form-label {
+  font: var(--type-label-default);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2xs);
+}
+
+.lims-form-required {
+  color: var(--color-status-danger);
+}
+
+.lims-form-desc {
+  font: var(--type-body-small);
+  color: var(--color-text-secondary);
+}
+
+.lims-input {
+  padding: 8px var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-default);
+  background-color: var(--color-surface-raised);
+  color: var(--color-text-primary);
+  font: var(--type-body-default);
+  outline: none;
+  transition: border-color var(--motion-duration-fast) var(--motion-ease-standard),
+              box-shadow var(--motion-duration-fast) var(--motion-ease-standard);
+  width: 100%;
+}
+
+.lims-input:hover:not(:disabled):not(.lims-input-error):not(.lims-input-success) {
+  border-color: var(--color-border-hover);
+}
+
+.lims-input:focus:not(:disabled) {
+  border-color: var(--color-brand-primary);
+  box-shadow: 0 0 0 2px var(--color-status-info-bg);
+}
+
+.lims-input:disabled {
+  background-color: var(--color-surface-hover);
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+.lims-input-error {
+  border-color: var(--color-status-danger);
+  background-color: var(--color-status-danger-bg);
+}
+.lims-input-error:focus {
+  border-color: var(--color-status-danger);
+  box-shadow: 0 0 0 2px var(--color-status-danger-bg);
+}
+
+.lims-input-success {
+  border-color: var(--color-status-success);
+  background-color: var(--color-status-success-bg);
+}
+
+.lims-form-error-msg {
+  font: var(--type-body-small);
+  color: var(--color-status-danger);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2xs);
+}
+
+/* Multi Select styles */
+.lims-multiselect-trigger {
+  min-height: 38px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2xs);
+  align-items: center;
+  padding: 4px var(--spacing-sm);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface-raised);
+  cursor: pointer;
+}
+
+.lims-multiselect-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 6px;
+  background-color: var(--color-surface-hover);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-xs);
+  font-size: 0.75rem;
+  color: var(--color-text-primary);
+}
+
+.lims-multiselect-remove {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+}
+
+/* Checkbox & Radio */
+.lims-checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  cursor: pointer;
+  user-select: none;
+}
+
+.lims-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-brand-primary);
+  cursor: pointer;
+}
+
+/* Switch component */
+.lims-switch-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  cursor: pointer;
+}
+.lims-switch-track {
+  width: 36px;
+  height: 20px;
+  background-color: var(--color-border-default);
+  border-radius: var(--radius-circular);
+  position: relative;
+  transition: background-color var(--motion-duration-fast) var(--motion-ease-standard);
+}
+.lims-switch-thumb {
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform var(--motion-duration-fast) var(--motion-ease-standard);
+  box-shadow: var(--elevation-1);
+}
+.lims-switch-track-active {
+  background-color: var(--color-brand-primary);
+}
+.lims-switch-thumb-active {
+  transform: translateX(16px);
+}
+
+/* File Upload drag-zone */
+.lims-file-drop {
+  border: 2px dashed var(--color-border-default);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl);
+  text-align: center;
+  background-color: var(--color-surface-raised);
+  cursor: pointer;
+  transition: border-color var(--motion-duration-fast) var(--motion-ease-standard);
+}
+.lims-file-drop-active {
+  border-color: var(--color-brand-primary);
+  background-color: var(--color-surface-hover);
+}
+.lims-file-progress-bar {
+  height: 4px;
+  width: 100%;
+  background-color: var(--color-border-default);
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  margin-top: var(--spacing-xs);
+}
+.lims-file-progress-fill {
+  height: 100%;
+  background-color: var(--color-status-success);
+  transition: width 0.3s ease;
+}

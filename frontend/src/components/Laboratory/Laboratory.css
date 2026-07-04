@@ -1,0 +1,107 @@
+/* Laboratory Specific Components Stylesheet */
+
+/* Specimen Status Badge mapping colors */
+.specimen-badge-REQUESTED { background-color: var(--color-surface-hover); color: var(--color-text-secondary); border-color: var(--color-border-default); }
+.specimen-badge-REGISTERED { background-color: var(--color-status-info-bg); color: var(--color-status-info); border-color: var(--color-status-info); }
+.specimen-badge-RECEIVED { background-color: var(--color-status-success-bg); color: var(--color-status-success); border-color: var(--color-status-success); }
+.specimen-badge-INCUBATION { background-color: var(--color-status-warning-bg); color: var(--color-status-warning); border-color: var(--color-status-warning); }
+.specimen-badge-REJECTED { background-color: var(--color-status-danger-bg); color: var(--color-status-danger); border-color: var(--color-status-danger); }
+.specimen-badge-DELIVERED { background-color: var(--color-brand-primary-bg); color: var(--color-brand-primary); border-color: var(--color-brand-primary); }
+
+/* AST Matrix S/I/R Grids */
+.lims-ast-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--color-border-default);
+  background-color: var(--color-surface-raised);
+}
+.lims-ast-matrix-th {
+  padding: 10px;
+  background-color: var(--color-surface-base);
+  border-bottom: 2px solid var(--color-border-default);
+  font: var(--type-label-default);
+  text-align: center;
+}
+.lims-ast-matrix-td {
+  padding: 10px;
+  border-bottom: 1px solid var(--color-border-default);
+  font: var(--type-body-default);
+  text-align: center;
+}
+.ast-interpretation-S {
+  background-color: var(--color-status-success-bg);
+  color: var(--color-status-success);
+  font-weight: 700;
+}
+.ast-interpretation-I {
+  background-color: var(--color-status-warning-bg);
+  color: var(--color-status-warning);
+  font-weight: 700;
+}
+.ast-interpretation-R {
+  background-color: var(--color-status-danger-bg);
+  color: var(--color-status-danger);
+  font-weight: 700;
+}
+
+/* Workflow steps timeline */
+.lims-workflow-step {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs) 0;
+}
+.lims-workflow-step-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-data);
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+.lims-workflow-active {
+  border-color: var(--color-brand-primary);
+  color: var(--color-brand-primary);
+}
+.lims-workflow-complete {
+  background-color: var(--color-status-success);
+  border-color: var(--color-status-success);
+  color: white;
+}
+
+/* ObservationCard */
+.lims-obs-card {
+  padding: var(--spacing-md);
+  border-left: 4px solid var(--color-brand-primary);
+  background-color: var(--color-surface-raised);
+}
+.lims-obs-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-2xs);
+}
+
+/* QC strains indicator */
+.lims-qc-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 6px var(--spacing-md);
+  border-radius: var(--radius-sm);
+  font: var(--type-body-small);
+  font-weight: 600;
+}
+.lims-qc-passed {
+  background-color: var(--color-status-success-bg);
+  color: var(--color-status-success);
+  border: 1px solid var(--color-status-success);
+}
+.lims-qc-failed {
+  background-color: var(--color-status-danger-bg);
+  color: var(--color-status-danger);
+  border: 1px solid var(--color-status-danger);
+}
