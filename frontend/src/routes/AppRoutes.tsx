@@ -15,12 +15,13 @@ import { CulturePage } from '../modules/culture';
 import { OrganismPage } from '../modules/organism';
 import { AstPage } from '../modules/ast';
 import { ValidationPage } from '../modules/validation';
+import { ReportPage } from '../modules/report';
+import { AdminPage } from '../modules/admin';
+import { QCPage } from '../modules/qc';
+import { AuditPage } from '../modules/audit';
+import { AnalyticsPage } from '../modules/analytics';
 import {
   DashboardPage,
-  ReportsPage,
-  AdminPage,
-  AuditPage,
-  AnalyticsPage,
   NotFoundPage,
   ForbiddenPage,
   UnauthorizedPage
@@ -53,8 +54,9 @@ export const AppRoutes: React.FC = () => {
         <Route path="organism" element={<OrganismPage />} />
         <Route path="ast" element={<AstPage />} />
         <Route path="validation" element={<ValidationPage />} />
-        <Route path="reports" element={<ReportsPage />} />
+        <Route path="reports" element={<ReportPage />} />
         <Route path="admin" element={<AdminPage />} />
+        <Route path="qc" element={<QCPage />} />
         <Route path="audit" element={<AuditPage />} />
         <Route path="analytics" element={<AnalyticsPage />} />
         <Route path="components" element={<ComponentPlaybook />} />

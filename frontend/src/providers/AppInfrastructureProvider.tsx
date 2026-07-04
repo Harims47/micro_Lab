@@ -19,6 +19,11 @@ import { initializeMockCultureServer } from '../modules/culture/api/mockCultureS
 import { initializeMockOrganismServer } from '../modules/organism/api/mockOrganismServer';
 import { initializeMockAstServer } from '../modules/ast/api/mockAstServer';
 import { initializeMockValidationServer } from '../modules/validation/api/mockValidationServer';
+import { initializeMockReportServer } from '../modules/report/api/mockReportServer';
+import { initializeMockAdminServer } from '../modules/admin/api/mockAdminServer';
+import { initializeMockQCServer } from '../modules/qc/api/mockQCServer';
+import { initializeMockAuditServer } from '../modules/audit/api/mockAuditServer';
+import { initializeMockAnalyticsServer } from '../modules/analytics/api/mockAnalyticsServer';
 
 // Initialize global window error handlers
 GlobalErrorHandler.install();
@@ -37,6 +42,11 @@ initializeMockCultureServer();
 initializeMockOrganismServer();
 initializeMockAstServer();
 initializeMockValidationServer();
+initializeMockReportServer();
+initializeMockAdminServer();
+initializeMockQCServer();
+initializeMockAuditServer();
+initializeMockAnalyticsServer();
 
 /**
  * Bridges user credentials from IdentityProvider to the PermissionProvider.

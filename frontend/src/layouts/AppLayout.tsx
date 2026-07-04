@@ -23,10 +23,10 @@ const navigationItems = [
   { name: 'AST Results', path: '/ast', icon: Layers },
   { name: 'Validations', path: '/validation', icon: ShieldAlert },
   { name: 'Reports', path: '/reports', icon: Award },
+  { name: 'Quality Control', path: '/qc', icon: CheckCircle },
   { name: 'Analytics', path: '/analytics', icon: BarChart3 },
   { name: 'Audit Logs', path: '/audit', icon: History },
-  { name: 'Admin Console', path: '/admin', icon: Settings },
-  { name: 'Playbook', path: '/components', icon: Settings }
+  { name: 'Admin Console', path: '/admin', icon: Settings }
 ];
 
 export const AppLayout: React.FC = () => {
