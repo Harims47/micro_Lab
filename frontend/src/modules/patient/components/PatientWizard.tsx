@@ -294,7 +294,7 @@ export const PatientWizard: React.FC<PatientWizardProps> = ({
                   <Select
                     label="Gender"
                     value={gender}
-                    onChange={(val) => updateField(setGender, val)}
+                    onChange={(e) => updateField(setGender, e.target.value)}
                     options={[
                       { value: '', label: '-- Choose Option --' },
                       { value: 'Male', label: 'Male' },
