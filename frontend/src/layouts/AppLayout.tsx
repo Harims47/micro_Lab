@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useGlobalState } from '../providers/GlobalStateProvider';
-import { UserRole } from '../types';
+
 import { 
   Menu, X, Sun, Moon, Search, Keyboard, AlertTriangle, CheckCircle, 
   ShieldAlert, User as UserIcon, LogOut, Layers, LayoutDashboard,
@@ -34,15 +34,12 @@ export const AppLayout: React.FC = () => {
     currentUser,
     activeRole,
     theme,
-    density,
     isSidebarOpen,
     toasts,
     commandPaletteOpen,
     toggleTheme,
-    setDensity,
     setSidebarOpen,
     setCommandPaletteOpen,
-    switchRole,
     dismissToast,
     specimens,
     patients
@@ -187,22 +184,6 @@ export const AppLayout: React.FC = () => {
                 );
               })}
             </nav>
-
-            {/* Role Switcher Matrix */}
-            <div style={layoutStyles.roleSwitcher}>
-              <label style={layoutStyles.switcherLabel}>Active RBAC Context</label>
-              <select
-                value={activeRole || ''}
-                onChange={(e) => switchRole(e.target.value as UserRole)}
-                style={layoutStyles.switcherSelect}
-              >
-                {Object.values(UserRole).map((role) => (
-                  <option key={role} value={role}>
-                    {role} Profile
-                  </option>
-                ))}
-              </select>
-            </div>
           </div>
         )}
       </aside>
@@ -227,24 +208,6 @@ export const AppLayout: React.FC = () => {
           </div>
 
           <div style={layoutStyles.headerRight}>
-            {/* Density switch indicators */}
-            <div style={layoutStyles.segmentedControl}>
-              {(['comfortable', 'compact', 'high-density'] as const).map((d) => (
-                <button
-                  key={d}
-                  onClick={() => setDensity(d)}
-                  style={{
-                    ...layoutStyles.segBtn,
-                    backgroundColor: density === d ? 'var(--color-brand-primary)' : 'transparent',
-                    color: density === d ? 'white' : 'var(--color-text-primary)'
-                  }}
-                  title={`Switch layout spacing to ${d}`}
-                >
-                  {d.slice(0, 3)}
-                </button>
-              ))}
-            </div>
-
             {/* Search Trigger */}
             <button style={layoutStyles.searchTrigger} onClick={() => setCommandPaletteOpen(true)}>
               <Search size={16} />

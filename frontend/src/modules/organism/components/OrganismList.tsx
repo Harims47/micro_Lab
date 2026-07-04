@@ -178,7 +178,7 @@ export const OrganismList: React.FC<OrganismListProps> = ({
         render: (row) => {
           const items: any[] = [
             {
-              label: 'View Colony Profile',
+              label: 'Identify Organism',
               onClick: () => onViewDetails(row.colonyId),
               permission: Permission.VIEW_SPECIMENS,
             },
@@ -272,7 +272,7 @@ export const OrganismList: React.FC<OrganismListProps> = ({
         }}
         onRefresh={fetchColonies}
         onCreate={canCreate ? onStartIdentification : undefined}
-        createLabel="New Identification"
+        createLabel="Identify Organism"
         extraFilters={extraFiltersBlock}
       />
 

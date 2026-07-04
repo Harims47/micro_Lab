@@ -114,7 +114,7 @@ export const ValidationList: React.FC<ValidationListProps> = ({ onViewDetails })
       key: 'actions', label: 'Actions',
       render: (r) => (
         <ActionMenu
-          items={[{ label: 'Open Workspace', onClick: () => onViewDetails(r.validationId), permission: Permission.VIEW_SPECIMENS }]}
+          items={[{ label: 'Review Case', onClick: () => onViewDetails(r.validationId), permission: Permission.VIEW_SPECIMENS }]}
           align="right"
         />
       ),
@@ -175,6 +175,8 @@ export const ValidationList: React.FC<ValidationListProps> = ({ onViewDetails })
         onRemoveFilter={(key) => { if (key === 'status') setStatusFilter('All'); else setPriorityFilter('All'); }}
         onClearAllFilters={() => { setStatusFilter('All'); setPriorityFilter('All'); }}
         onRefresh={fetchRecords}
+        onCreate={records.length > 0 ? () => onViewDetails(records[0].validationId) : undefined}
+        createLabel="Review Case"
         extraFilters={extraFilters}
       />
 

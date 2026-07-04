@@ -418,7 +418,7 @@ export const PatientList: React.FC<PatientListProps> = ({
         onRefresh={fetchPatients}
         onExport={canExport ? handleExport : undefined}
         onCreate={canCreate ? onRegisterPatient : undefined}
-        createLabel="Register Patient"
+        createLabel="Add Patient"
         extraActions={quickActions}
         extraFilters={extraFiltersBlock}
       />

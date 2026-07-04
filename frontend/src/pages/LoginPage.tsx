@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../infrastructure/auth/useAuth';
 import { useIdentity } from '../infrastructure/auth/useIdentity';
-import { mockUsers } from '../mock/mockData';
 import { TextInput } from '../components/Form/TextInput';
 import { Checkbox } from '../components/Form/Checkbox';
 import { Button } from '../components/Foundation/Button';
@@ -34,13 +33,6 @@ export const LoginPage: React.FC = () => {
     }
   }, [user, navigate]);
 
-  // Autofill credentials when shortcut dropdown is selected
-  const handleProfileSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const val = e.target.value;
-    setUsername(val);
-    setPassword('password123'); // Standard mock passcode
-    setError(null);
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -111,26 +103,6 @@ export const LoginPage: React.FC = () => {
         )}
 
         <form onSubmit={handleSubmit} style={styles.form}>
-          {/* Quick Profile Shortcuts */}
-          <div style={styles.fieldGroup}>
-            <label style={styles.label}>Select User Profile Shortcut</label>
-            <select
-              value={username}
-              onChange={handleProfileSelect}
-              style={styles.select}
-            >
-              <option value="" disabled>-- Choose shortcut to fill credentials --</option>
-              {mockUsers.map((u) => (
-                <option key={u.userId} value={u.username}>
-                  {u.name} ({u.role})
-                </option>
-              ))}
-              <option value="disabled_user">Disabled User Account (Simulated)</option>
-              <option value="locked_user">Locked User Account (Simulated)</option>
-              <option value="expired_password_user">Expired Password (Simulated)</option>
-              <option value="server_error">Database Connection Error (Simulated)</option>
-            </select>
-          </div>
 
           <TextInput
             label="Username / ID"

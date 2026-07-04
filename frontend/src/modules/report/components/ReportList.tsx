@@ -96,7 +96,7 @@ export const ReportList: React.FC<ReportListProps> = ({ onViewDetails }) => {
       key: 'actions', label: 'Actions',
       render: (r) => (
         <ActionMenu
-          items={[{ label: 'Open Report Workspace', onClick: () => onViewDetails(r.reportId), permission: Permission.VIEW_SPECIMENS }]}
+          items={[{ label: 'Generate Report', onClick: () => onViewDetails(r.reportId), permission: Permission.VIEW_SPECIMENS }]}
           align="right"
         />
       ),
@@ -141,6 +141,8 @@ export const ReportList: React.FC<ReportListProps> = ({ onViewDetails }) => {
         onRemoveFilter={() => setStatusFilter('All')}
         onClearAllFilters={() => setStatusFilter('All')}
         onRefresh={fetchReports}
+        onCreate={reports.length > 0 ? () => onViewDetails(reports[0].reportId) : undefined}
+        createLabel="Generate Report"
         extraFilters={extraFilters}
       />
 

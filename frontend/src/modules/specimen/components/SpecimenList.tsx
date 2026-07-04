@@ -368,7 +368,7 @@ export const SpecimenList: React.FC<SpecimenListProps> = ({
         onRefresh={fetchSpecimens}
         onExport={handleExport}
         onCreate={canCollect ? onCollectSpecimen : undefined}
-        createLabel="Register Collection"
+        createLabel="Accession Specimen"
         extraFilters={extraFiltersBlock}
       />
 

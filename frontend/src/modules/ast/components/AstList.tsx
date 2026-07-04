@@ -138,7 +138,7 @@ export const AstList: React.FC<AstListProps> = ({ onViewDetails, onCreateAst }) 
         <ActionMenu
           items={[
             {
-              label: 'View AST Worksheet',
+              label: 'Open AST Worksheet',
               onClick: () => onViewDetails(row.astId),
               permission: Permission.VIEW_SPECIMENS,
             },
@@ -189,7 +189,7 @@ export const AstList: React.FC<AstListProps> = ({ onViewDetails, onCreateAst }) 
         onClearAllFilters={() => setStatusFilter('All')}
         onRefresh={fetchAsts}
         onCreate={canCreate ? onCreateAst : undefined}
-        createLabel="New AST Record"
+        createLabel="Open AST Worksheet"
         extraFilters={extraFiltersBlock}
       />
 

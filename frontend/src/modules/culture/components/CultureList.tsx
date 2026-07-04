@@ -247,7 +247,7 @@ export const CultureList: React.FC<CultureListProps> = ({
         onClearAllFilters={() => setStatusFilter('All')}
         onRefresh={fetchCultures}
         onCreate={canInoculate ? onInoculate : undefined}
-        createLabel="Register Inoculation"
+        createLabel="Start Culture"
         extraFilters={extraFiltersBlock}
       />
 

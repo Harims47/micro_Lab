@@ -481,7 +481,7 @@ export const OrderList: React.FC<OrderListProps> = ({
         onRefresh={fetchOrders}
         onExport={canExport ? handleExport : undefined}
         onCreate={canCreate ? onCreateOrder : undefined}
-        createLabel="New Requisition"
+        createLabel="Create Requisition"
         extraActions={extraActions}
         extraFilters={extraFiltersBlock}
       />
